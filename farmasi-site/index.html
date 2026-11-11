@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fcfaf6">
+  <meta name="description" content="Browse the Farmasi product catalog with prices shown in U.S. dollars.">
+  <title>Zahra Beauty | Farmasi Catalog</title>
+  <link rel="stylesheet" href="farmasi.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <a class="brand" href="#home" aria-label="Zahra Beauty, Farmasi catalog">
+        <span class="brand-mark" aria-hidden="true">z.</span>
+        <span class="brand-name">zahra <strong>beauty</strong><small>farmasi catalog</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#catalog">Catalog</a>
+        <a class="bag-nav-link" href="#bag" aria-label="Shopping bag, 0 items">
+          <svg class="cart-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="20" r="1.3" fill="currentColor"/>
+            <circle cx="18" cy="20" r="1.3" fill="currentColor"/>
+          </svg>
+          <span>My bag</span>
+          <span id="bagCount" class="bag-count" aria-live="polite">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="page-width hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><span aria-hidden="true">✦</span> ZAHRA'S FARMASI CATALOG</span>
+          <h1>Find your next<br><em>beauty favorite.</em></h1>
+          <a class="button button-dark" href="#catalog">Browse the catalog <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-image">
+          <img src="https://content-tr.farmasi.com.tr/Product/1001409_250_2.webp" alt="Farmasi Matte Liquid Lipstick 01 Perfect Rose" fetchpriority="high">
+          <span class="hero-image-note">A little discovery, just for you <span aria-hidden="true">✧</span></span>
+          <span class="hero-price-stamp"><span>CATALOG</span> in USD</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers-section page-width" id="catalog">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ZAHRA'S STOREFRONT</span>
+          <h2>Farmasi product catalog</h2>
+          <p>Browse products from every category.</p>
+        </div>
+      </div>
+
+      <div class="catalog-toolbar">
+        <label class="search-field">
+          <span aria-hidden="true">⌕</span>
+          <input id="productSearch" type="search" placeholder="Search products or product codes" aria-label="Search Farmasi products">
+        </label>
+        <div class="category-filters" id="categoryFilters" aria-label="Filter by product category">
+          <button class="filter-chip active" type="button" data-category="all">All products</button>
+        </div>
+        <label class="sort-field">Sort
+          <select id="sortProducts" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="catalog-meta">
+        <span id="resultsCount" aria-live="polite">Loading Farmasi products…</span>
+        <span id="priceUpdated" class="price-updated">Loading price snapshot…</span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span aria-hidden="true">✧</span>
+        <h3>No matching products</h3>
+        <p>Try a different search or category.</p>
+      </div>
+    </section>
+
+    <section class="bag-section page-width" id="bag">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR PICKS</span>
+          <h2>Shopping bag</h2>
+          <p>Review your items, then send your order by WhatsApp.</p>
+        </div>
+      </div>
+      <div id="bagItems" class="bag-items"></div>
+      <div id="bagEmpty" class="bag-empty">
+        <p>Your bag is empty. Add products from the catalog to get started.</p>
+      </div>
+      <div id="bagSummary" class="bag-summary" hidden>
+        <span>Order total</span>
+        <strong id="bagTotal">$0.00</strong>
+      </div>
+      <a id="whatsappOrder" class="button button-dark whatsapp-order" href="https://wa.me/9613984665" target="_blank" rel="noopener noreferrer" aria-disabled="true">
+        Send order on WhatsApp <span aria-hidden="true">↗</span>
+      </a>
+      <p id="bagStatus" class="bag-status" role="status" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <a class="brand footer-brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">z.</span>
+        <span class="brand-name">zahra <strong>beauty</strong><small>farmasi catalog</small></span>
+      </a>
+      <p>Independent Farmasi catalog. Product availability and exchange rates may change.</p>
+    </div>
+    <div class="page-width footer-bottom">© 2026 Zahra Beauty · Farmasi Türkiye</div>
+  </footer>
+  <script src="farmasi-products.js"></script>
+  <script src="farmasi.js"></script>
+</body>
+</html>
